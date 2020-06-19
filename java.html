@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+<head>
+<title>Java</title>
+</head>
+<header>
+<style>
+article{
+color: #fff;
+}
+div img{
+width: 700px;
+height: 590px;
+position: relative;
+padding: 50px;
+top: 80px;
+float: right;
+}
+</style>
+<body bgcolor="#42455a">
+<div>
+<img src="javaimg.png" alt="Made by Riccardo Flask">
+</div>
+<article>
+<p>
+<h4>Made by Riccardo Flask </h4>
+</p>
+<p>
+“Java refers to a number of computer software products and specifications from Sun Microsystems (the Java™ technology) that together provide a system for developing and deploying cross-platform applications. Java is used in a wide variety of computing platforms spanning from embedded devices and mobile phones on the low end to enterprise servers and super computers on the high end. Java is fairly ubiquitous in mobile phones, Web servers and enterprise applications, and somewhat less common in desktop applications, though users may have come across Java applets when browsing the Web. <br>Writing in the Java programming language is the primary way to produce code that will be deployed as Java bytecode, though there are compilers available for other languages such as JavaScript, Python and Ruby, and a native Java scripting language called Groovy. Java syntax borrows heavily from C and C++ but it eliminates certain low-level constructs such as pointers and has a very simple memory model where every object is allocated on the heap and all variables of object types are references. Memory management is handled through integrated automatic garbage collection performed by the Java Virtual Machine (JVM).”  <br> 
+OOP is a particular style of programming which involves a particular way of designing solutions to particular problems. Most modern programming languages, including Java, support this paradigm. When speaking about OOP one has to mention: 
+<ul>
+<li>Inheritance </li>
+<li>Modularity </li>
+<li>Polymorphism </li>
+<li>Encapsulation (binding code and its data) </li>
+</ul>
+However at this point it is too early to try to fully understand these concepts. 
+This guide is divided into two major sections, the first section is an introduction to the language and illustrates various examples of code while the second part goes into more detail. 
+<br>The Java Development Kit – JDK 
+In order to get started in Java programming, one needs to get a recent copy of the Java JDK. This can be obtained for free by downloading it from the Sun Microsystems website, http://java.sun.com/ 
+Once you download and install this JDK you are ready to get started. You need a text editor as well and Microsoft’s Notepad (standard with all Windows versions) suits fine. 
+My first Java program 
+Open your text editor and type the following lines of code: 
+ 
+<br>
+<br>
+ 	
+This is known as a Block Comment. These lines are useful to the programmer and are ignored by the 
+Compiler 
+
+/* 
+My first program 
+Version 1 */ public class Example1 {     public static void main (String args []) { 
+        System.out.println ("My first Java program"); 
+    } 
+} 
+<br><br>Save the file as Example1.java . The name of the program has to be similar to the filename. 
+Programs are called classes. Please note that Java is case-sensitive. You cannot name a file “Example.java” and then in the program you write “public class example”. It is good practice to insert comments at the start of a program to help you as a programmer understand quickly what the particular program is all about. This is done by typing “/*” at the start of the comment and “*/” when you finish. The predicted output of this program is: 
+My first Java program <br>My first Java program 
+In order to get the above output we have to first compile the program and then execute the compiled class. The applications required for this job are available as part of the JDK: 
+<br><br>•	cd\  (change directory) <br>•	cd\[folder name] to get to the required folder/directory <br>•	cd\[folder name] to get to the required folder/directory 
+When you get to the required destination you need to type the following: 
+c:\[folder name]\javac Example1.java 
+<br>The above command will compile the java file and prompt the user with any errors. If the compilation is successful a new file containing the bytecode is generated: Example1.class 
+To execute the program, we invoke the interpreter by typing: 
+c:\[folder name]\java Example1 
+<br>
+The result will be displayed in the DOS window. 
+<br>Using an IDE 
+Some of you might already be frustrated by this point. However there is still hope as one can forget about the command prompt and use an IDE (integrated development environment) to work with Java programming. There are a number of IDE’s present, all of them are fine but perhaps some are easier to work with than others. It depends on the user’s level of programming and tastes! The following is a list of some of the IDE’s available
+<br><br>•	BlueJ – www.bluej.org  (freeware) <br><br>•	NetBeans – www.netbeans.org (freeware/open-source) <br><br>•	JCreator – www.jcreator.com (freeware version available, pro version purchase required) <br><br>•	Eclipse – www.eclipse.org (freeware/open-source) <br><br>•	IntelliJ IDEA – www.jetbrains.com (trial/purchase required) <br><br><br><br>Variables and Data Types 
+ 
+<br> 
+Variables 
+A variable is a place where the program stores data temporarily. As the name implies the value stored in such a location can be changed while a program is executing (compare with constant). 
+<br><br>
+<form>class Example2 {     public static void main(String args[])<br> {         int var1; // this declares a variable     <br>    int var2; // this declares another variable         var1 = 1024; // this assigns 1024 to var1         System.out.println("var1 contains " + var1);   <br>      var2 = var1 / 2; <br>
+        System.out.print("var2 contains var1 / 2: "); 
+        System.out.println(var2); 
+        } 
+} 
+</form>
+</p>
+<p>var2 contains var1 / 2: 512 
+ The above program uses two variables, var1 and var2. var1 is assigned a value directly while var2 is filled up with the result of dividing var1 by 2, i.e. var2 = var1/2. The words int refer to a particular data type, i.e. integer (whole numbers). 
+<br><br><br>Logical Operators 
+These operators are used to evaluate an expression and depending on the operator used, a particular output is obtained. In this case the operands must be Boolean data types and the result is also Boolean. The following table shows the available logical operators: 
+<br>Operator 	Description <br>
+& 	AND gate behaviour (0,0,0,1) <br>
+| 	OR gate behaviour (0,1,1,1) <br>
+^ 	XOR – exclusive OR (0,1,1,0)<br> 
+&& 	Short-circuit AND  <br>
+|| 	Short-circuit OR <br>
+! 	Not  <br>
+<br><br><br>2 is a factor of 10 <br>Trying to understand the above program is a bit difficult, however the program highlights the main difference in operation between a normal AND (&) and the short-circuit version (&&). In a normal AND operation, both sides of the expression are evaluated, e.g.  <br><br>AND operation, both sides of the expression are evaluated, e.g.  
+if(d != 0 & (n % d) == 0) – this returns an error as first d is compared to 0 to check inequality and then the operation (n%d) is computed yielding an error! (divide by zero error) 
+The short circuit version is smarter since if the left hand side of the expression is false, this mean that the output has to be false whatever there is on the right hand side of the expression, therefore: 
+if(d != 0 && (n % d) == 0) – this does not return an error as the (n%d) is not computed since d is equal to 0, and so the operation (d!=0) returns false, causing the output to be false. Same applies for the short circuit version of the OR. 
+<br><br>
+Character Escape Codes 
+The following codes are used to represents codes or characters which cannot be directly accessible through a keyboard: 
+Code 	Description <br>
+\n 	New Line <br>
+\t 	Tab <br>
+\b 	Backspace<br> 
+\r 	Carriage Return<br> 
+\\ 	Backslash <br>
+\’ 	Single Quotation Mark<br> 
+\” 	Double Quotation Mark <br>
+\* 	Octal - * represents a number or Hex digit<br> 
+\x* 	Hex <br>
+\u* 	Unicode, e.g.  \u2122 = ™ (trademark symbol)<br>
+<br><br> 
+
+ 
+
+</p>
+<p>
+class Example6 {    public static void <br>main(String args[]) { <br>
+ 	System.out.println("First line\nSecond line"); <br>
+ 	System.out.println("A\tB\tC");<br> 
+ 	System.out.println("D\tE\tF") ; <br>
+ 	} <br>
+} <br><br>
+Predicted Output: <br><br>
+First Line <br>
+Second Line <br>
+A B 	C <br>
+D E 	F <br><br><br><br>
+ Test your skills – Example7 <br><br>
+Make a program which creates a sort of truth table to show the behaviour of all the logical operators mentioned. Hints: <br>
+•	You need two Boolean type variables which you will initially set both to false <br><br>
+•	Use character escape codes to tabulate the results <br><br>
+The following program can be used as a guide: <br><br>
+ class LogicTable {    public static void <br>main(String args[]) { <br>
+ 	boolean p, q; <br>
+ 	System.out.println("P\tQ\tPANDQ\tPORQ\tPXORQ\tNOTP");  <br>	p = true; q = true; <br>
+ 	System.out.print(p + "\t" + q +"\t"); <br>
+ 	System.out.print((p&q) + "\t" + (p|q) + "\t");  	System.out.println((p^q) + "\t" + (!p));  <br>	p = true; q = false; <br>
+ 	System.out.print(p + "\t" + q +"\t"); <br>
+ 	System.out.print((p&q) + "\t" + (p|q) + <br>"\t");  	System.out.println((p^q) + "\t" + (!p)); <br> 	p = false; q = true; <br>
+ 	System.out.print(p + "\t" + q +"\t"); <br>
+ 	System.out.print((p&q) + "\t" + (p|q) + "\t"); <br> 	System.out.println((p^q) + "\t" + (!p));  <br>	p = false; q = false; <br>
+ 	System.out.print(p + "\t" + q +"\t"); <br><br>
+ 	System.out.print((p&q) + "\t" + (p|q) + "\t"); <br>
+ 	System.out.println((p^q) + "\t" + (!p)); <br>
+ 	} <br>
+} <br><br>
+Predicted Output: <br><br>
+P       Q       PANDQ   PORQ    PXORQ   NOTP <br>true    true    true    true    false   <br>fals true    false   false   true    true   <br> fals false   true    false   true    true  <br><br>  true false   false   false   false  <br> false   true  <br><br><br>
+ <br>
+Data Types <br><br><br>
+The following is a list of Java’s primitive data types: 
+Data Type 	Description <br>
+int 	Integer – 32bit ranging from -2,147,483,648 to 2,147,483,648 <br>
+byte 	8-bit integer ranging from -128 to 127 <br>
+short 	16-bit integer ranging from -32,768 to 32,768 <br>
+long 	64-bit integer  from -9,223,372,036,854,775,808 to -9,223,372,036,854,775,808  <br>
+ 	 
+float 	Single-precision floating point, 32-bit <br>
+double 	Double-precision floating point, 64-bit <br>
+ 	 
+char 	Character , 16-bit unsigned ranging from 0 to 65,536 (Unicode) <br>
+ 	 
+boolean 	Can be true or false only <br>
+ 
+The ‘String’ type has not been left out by mistake. It is not a primitive data type, but strings (a sequence of characters) in Java are treated as Objects. <br>
+class Example8 {    public static void main(String args[]) <br>{       int var; // this declares an int variable  <br>     double x; <br>// this declares a floating-point variable    <br>   var = 10; // assign var the value 10       x = 10.0; // assign x the value 10.0 <br>
+      System.out.println("Original value of var: " + var); <br>
+      System.out.println("Original value of x: " + x); <br>
+      System.out.println();<br> // print a blank line <br>
+      // now, divide both by 4 <br><br>      var = var / 4;       x = x / 4; <br>
+      System.out.println("var after division: " + var); <br>
+      System.out.println("x after division: " + x); <br>
+   } <br>
+} <br>
+Predicted output: <br><br>
+Original value of var: 10 Original<br> value of x: 10.0 <br>
+
+</p>
+<br>
+ var after division: <br>
+2 x after division: <br>
+2.5 <br>
+
+One here has to note the difference in precision of the different data types. The following example uses the character data type. Characters in Java are encoded using Unicode giving a 16-bit range, or a total of 65,537 different codes. <br>
+<br>
+
+  
+class Example9 {    public static void <br><br>
+
+main(String args[]) { 
+ 	char ch;  <br>
+	ch = 'X'; <br>
+
+ 	System.out.println("ch contains " + ch); <br>
+ <br>
+ 	ch++; // increment ch <br>
+
+ 	System.out.println("ch is now " + ch);  <br>
+	ch = 90; // give ch the value Z<br>
+ <br>
+
+ 	System.out.println("ch is now " + ch); <br>
+
+ 	} <br>
+
+} <br>
+
+Predicted Output: <br>
+<br>
+
+ch is now X ch <br>
+is now Y ch is <br>
+now Z <br>
+<br>
+
+The character ‘X’ is encoded as the number 88, hence when we increment ‘ch’, we get character number 89, or ‘Y’. <br>
+
+The Boolean data type can be either TRUE or FALSE. It can be useful when controlling flow of a program by assigning the Boolean data type to variables which function as flags. Thus program flow would depend on the condition of these variables at the particular instance. Remember that the output of a condition is always Boolean. <br>
+<br>
+
+class Example10 {    public static void <br>
+main(String args[]) { <br>
+
+ 	boolean b;  <br>
+	b = false; <br>
+
+ 	System.out.println("b is " + b);  <br>
+	b = true; <br>
+
+ 	System.out.println("b is " + b); <br>
+
+ 	// a boolean value can control the if statement  	if(b) System.out.println("This is executed.");  <br>
+	b = false; <br>
+<br>
+
+ 	if(b) System.out.println("This is not executed."); <br>
+
+ 	// outcome of a relational operator is a boolean value 
+ 	System.out.println("10 > 9 is " + (10 > 9)); <br>
+
+ 	} <br>
+
+} <br>
+
+Predicted output: <br>
+<br>
+
+b is false b is <br>
+true This is <br>
+executed <br>
+10 > 9 is true <br>
+ 
+Introducing Control Statements <br>
+These statements will be dealt with in more detail further on in this booklet. For now we will learn about the if and the for loop. <br>
+<br>
+
+ 
+class Example11 <br>
+{    public static void main(String args[]) {       int a,b,c;    <br>
+   a = 2;    <br>
+   b = 3;  <br>
+     c = a - b; <br>
+ if (c >= 0) System.out.println("c is a positive number");      <br>
+if (c < 0) System.out.println("c is a negative number");  <br>
+     System.out.println(); <br>
+      c = b - a; <br>
+     if (c >= 0) System.out.println("c is a positive number");  <br>
+    if (c < 0) System.out.println("c is a negative number"); <br>
+
+   } <br>
+
+} <br>
+
+Predicted output: <br>
+<br>
+
+c is a negative number c <br>
+is a positive number <br>
+
+ 
+The ‘if’ statement evaluates a condition and if the result is true, then the following statement/s are executed, else they are just skipped (refer to program output). The line System.out.println() simply inserts a blank line. Conditions use the following comparison operators: <br><br>
+
+
+Operator 	Description <br>
+
+< 	Smaller than <br>
+
+> 	Greater than <br>
+
+<= 	Smaller or equal to, (a<=3) : if a is 2 or 3, then result of comparison is TRUE <br>
+
+>= 	Greater or equal to, (a>=3) : if a is 3 or 4, then result of comparison is TRUE <br>
+
+== 	Equal to <br>
+
+!= 	Not equal <br>
+<br>
+
+The for loop is an example of an iterative code, i.e. this statement will cause the program to repeat a particular set of code for a particular number of times. In the following example we will be using a counter which starts at 0 and ends when it is smaller than 5, i.e. 4. Therefore the code following the for loop will iterate for 5 times. <br>
+<br>
+
+ 
+class Example12 {    public static void <br>
+main(String args[])<br>
+ {       int count;  <br>
+     for(count = 0; count < 5; count = count+1) 
+      System.out.println("This is count: " + count); <br>
+
+      System.out.println("Done!"); <br>
+<br>
+
+      } <br>
+
+}<br>
+ 
+Predicted Output: <br>
+<br>
+
+This is count: 0 <br>
+<br>
+
+This is count: 1 <br>
+
+This is count: 2 <br>
+<br>
+
+This is count: 3 <br>
+
+This is count: 4 <br>
+
+Done! <br>
+
+Instead of count = count+1, this increments the counter, we can use count++ The following table shows all the available shortcut operators: 
+Operator 	Description 	Example 	Description <br>
+
+++ 	Increment 	a++ 	a = a + 1 (adds one from a) <br>
+
+-- 	Decrement 	a-- 	a = a – 1 (subtract one from a) <br>
+
++= 	Add and assign 	a+=2 	a = a + 2  <br>
+
+-= 	Subtract and assign 	a-=2 	a = a – 2 <br>
+
+*= 	Multiply and assign 	a*=3 	a = a * 3 <br>
+
+/= 	Divide and assign 	a/=4 	a = a / 4 <br>
+
+%= 	Modulus and assign 	a%=5 	a = a mod 5 <br>
+<br>
+
+ 
+Blocks of Code <br>
+<br>
+
+Whenever we write an IF statement or a loop, if there is more than one statement of code which has to be executed, this has to be enclosed in braces, i.e. ‘, …. -’ <br>
+
+class Example13 {    public static void main(String args[])<br>
+ {       double i, j, d; <br>
+      i = 5;  <br>
+     j = 10;   <br>
+    if(i != 0) { <br>
+
+         System.out.println("i does not equal <br>
+zero"); <br>
+
+         d = j / i; Block of <br>
+
+Code 
+         System.out.print("j / i is " + d); <br>
+
+ 	 
+      System.out.println(); <br>
+
+    } <br>
+
+}<br>
+ 
+Predicted Output: <br>
+<br>
+
+i does not equal to zero j/i <br>
+is 2 <br>
+
+ Test your skills – Example14 <br>
+<br>
+
+Write a program which can be used to display a conversion table, e.g. Euros to Malta Liri, or Metres to Kilometres. <br>
+
+Hints: <br>
+<br>
+
+One variable is required <br>
+•	
+You need a loop  <br>
+•	<br>
+The Euro Converter has been provided for you for guidance. Note loop starts at 1 and finishes at 100 (<101). In this case since the conversion rate does not change we did not use a variable, but assigned it directly in the print statement. <br>
+•	
+class EuroConv { <br>
+
+    public static void main (String args []){         double eu; <br>
+ 
+        System.out.println("Euro conversion table:");   <br>
+      System.out.println();         for (eu=1;eu<101;eu++) 
+            System.out.println(eu+" Euro is euqivalent to Lm 
+"+(eu*0.43)); <br>
+
+       } <br>
+
+} <br>
+<p>
+</p>
+</article>
+
+</body>
+</html>
